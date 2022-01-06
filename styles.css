@@ -1,0 +1,59 @@
+*{
+    padding: 0;
+}
+#jumpGame{
+    margin: auto;
+    margin-top: 200px;
+    align-content: center;
+    width: 1000px;
+    height: 200px;
+    background-color: rgb(157, 201, 243);
+    border: 1px solid;
+}
+/*
+#grass{
+    width: 1000;
+    height: 50;
+    background-color: green;
+    position: relative;
+    top: 150;
+}
+*/
+#player{
+    width: 20px;
+    height: 50px;
+    background-color: rgb(44, 143, 57);
+    position: relative;
+    top: 150px;
+}
+.animate{
+    animation: jump 400ms;
+}
+/* makes the player jump, jumping 50 pixels high 50% throughout the jump*/
+@keyframes jump{
+    0%{top: 150px;}
+    40%{top: 90px;}
+    60%{TOP: 90px;}
+    100%{top: 150px}
+}
+@function randomNum(min,max){
+    $rand: random()
+    min + (int)(Math.random() * ((max - min)+1));
+
+    @return $randomNum;
+}
+/* brings in the obstacle towards the player. The obstacle is 20 pixels high at the bottom of the game*/
+#obstacle{
+    width: 20px;
+    height: 20px;
+    background-color: rgb(182, 2, 2);
+    position: relative;
+    top: 130px;
+    right: 0px;
+    animation: obstacle 1s infinite linear;
+}
+/* uses the keyframes tool to move the obstacle towards te player */
+@keyframes obstacle{
+    0%{left:980px;}
+    100%{left:-30px;}
+}
